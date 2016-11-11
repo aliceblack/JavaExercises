@@ -27,7 +27,7 @@ class E extends D{//es 4.4.11
 		
 		//quinto frammento
 		//Y y=new D();
-		//X x=(E)y; //D cannot be casted to C
+		//X x=(E)y; //D cannot be casted to E
 		//x.f(); y.g();
 		
 		//sesto frammento
