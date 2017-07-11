@@ -8,9 +8,10 @@ class Scacchiera{
 
     public synchronized void updateTurno(){
         fineTurnoGiocatore++;
-        if(fineTurnoGiocatore%2==0){
+        if(fineTurnoGiocatore%2 == 0){
             swap();
             turno2 = true;
+            this.notifyAll();
         }
     }
     public synchronized boolean getTurno2(){return turno2;}

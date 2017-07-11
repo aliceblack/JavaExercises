@@ -10,6 +10,10 @@ class Giocatore extends Thread{
     Giocatore(String n, Scacchiera s){name=n; scacchiera=s;}
     public  void run(){
         for(int i=0; i<30; i++){
+            try {
+                sleep(300);
+            }catch (Exception e){}
+
             System.out.println("mossa:"+i+" giocatore:"+name);
             int r=((int)(Math.random()*10))%Scacchiera.NRIGHE;
             int c=((int)(Math.random()*10))%Scacchiera.NCOLONNE;
@@ -20,7 +24,10 @@ class Giocatore extends Thread{
          * entrambi i giocatori devono completare il primo turno
          * la partita deve essere al turno 2
          */
-        while(scacchiera.getTurno2()==false){try { wait(); }catch (Exception e){}}
+        while(scacchiera.getTurno2()==false){
+            System.out.println(" giocatore "+name+" va in wait");
+            try { scacchiera.wait(); sleep(300); }catch (Exception e){}
+        }
         for(int j=0; j<30; j++) {
             System.out.println("mossa:" + j + " giocatore:" + name);
             int rs = ((int) (Math.random() * 10)) % Scacchiera.NRIGHE;
