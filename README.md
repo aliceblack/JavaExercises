@@ -1,1 +1,2 @@
 # JavaExercises
+Straight from University!
